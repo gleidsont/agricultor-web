@@ -1,5 +1,6 @@
 <?php
 include 'includes/conexao.php';
+
 $logout_msg = "";
 $erro = '';
 if (isset($_GET['logout'])) {
@@ -13,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conexao->prepare("SELECT * FROM usuarios WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
+
     $resultado = $stmt->get_result();
 
     if ($resultado->num_rows === 1) {
@@ -58,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-primary w-100">Entrar</button>
     </form>
     <div class="mt-3 text-center">
-        <a href="registro.php">Criar conta</a> | 
+        <a href="cadastro.php">Criar conta</a> | 
         <a href="recuperar_senha.php">Esqueci minha senha</a>
     </div>
 </div>

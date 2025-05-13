@@ -1,6 +1,6 @@
 <?php
 include 'includes/header.php';
-include 'includes/auth_check.php'; // Garante que está logado 
+//include 'includes/auth_admin_pesq_agricultor.php';
 ?>
 <body>
     <header class="bg-success text-white py-3">

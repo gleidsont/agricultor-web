@@ -1,9 +1,8 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+session_start();
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.php");
+    header("Location: agricultor-web/login.php");
     exit;
 }
+?>
