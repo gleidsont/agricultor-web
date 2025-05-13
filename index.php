@@ -1,11 +1,32 @@
 <?php
+include 'includes/auth_admin_pesq_agricultor.php';
+include 'includes/conexao.php';
 include 'includes/header.php';
-//include 'includes/auth_admin_pesq_agricultor.php';
+//echo '<pre>';
+//print_r($_SESSION);
+//echo '</pre>';
+
+$id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
+$sql = "SELECT nome FROM usuarios WHERE id = $id_agricultor";
+$nome_agricultor = '';
+
+if ($id_agricultor) {
+    $stmt = $conexao->prepare("SELECT nome FROM usuarios WHERE id = ?");
+    $stmt->bind_param("i", $id_agricultor);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($row = $result->fetch_assoc()) {
+        $nome_agricultor = $row['nome'];
+    }
+}
+
 ?>
 <body>
     <header class="bg-success text-white py-3">
         <div class="container">
-            <h1>Controle de Produção Agrícola</h1>
+            <h2>Controle de Produção Agrícola</h2>
+            <h4>Agricultor selecionado: <?= htmlspecialchars($nome_agricultor) ?></h4>
         </div>
     </header>
 
