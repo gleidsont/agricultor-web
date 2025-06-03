@@ -82,6 +82,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/consumo.js"></script>
+    <script src="../js/caderneta.js"></script>
 </body>
 </html>
