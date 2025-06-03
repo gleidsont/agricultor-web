@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Consumo</title>
+    <title>Caderneta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
     <header class="bg-success text-white py-3">
         <div class="container">
-            <h1>Registro de Consumo Familiar</h1>
+            <h1>Caderneta Agroecológica - Registros</h1>
         </div>
     </header>
 
@@ -24,6 +24,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th>Tipo de Registro</th>
                     <th>Produto</th>
                     <th>Quantidade</th>
                     <th>Valor (R$)</th>

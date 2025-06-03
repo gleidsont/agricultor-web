@@ -34,47 +34,26 @@ if ($id_agricultor) {
         <div class="row row-cols-3 row-cols-md-4 row-cols-lg-6 g-4">
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/consumo.png" class="card-img-top" alt="Consumo">
+                    <img src="images/caderneta.png" class="card-img-top" alt="Caderneta">
                     <div class="card-body">
-                        <h5 class="card-title">Consumo</h5>
-                        <p class="card-text">Registre os produtos consumidos pela família</p>
-                        <a href="api/consumo/ler.php" class="btn btn-primary">Acessar</a>
+                        <h5 class="card-title">Caderneta</h5>
+                        <p class="card-text">Registre aqui tudo o que foi consumido, trocado, doado ou vendido</p>
+                        <a href="api/caderneta/ler.php" class="btn btn-primary">Acessar</a>
                     </div>
                 </div>
             </div>
             
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/doacao.png" class="card-img-top" alt="Doação">
+                    <img src="images/estatistica.png" class="card-img-top" alt="Estatística">
                     <div class="card-body">
-                        <h5 class="card-title">Doação</h5>
-                        <p class="card-text">Registre produtos doados para outras pessoas</p>
-                        <a href="api/doacao/ler.php" class="btn btn-primary">Acessar</a>
+                        <h5 class="card-title">Estatística</h5>
+                        <p class="card-text">Veja aqui as estatísticas deste agricultor</p>
+                        <a href="api/estatistica/estatisticas.php" class="btn btn-primary">Acessar</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/troca.png" class="card-img-top" alt="Troca">
-                    <div class="card-body">
-                        <h5 class="card-title">Troca</h5>
-                        <p class="card-text">Registre trocas de produtos com outros agricultores</p>
-                        <a href="api/troca/ler.php" class="btn btn-primary">Acessar</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col">
-                <div class="card h-100">
-                    <img src="images/venda.png" class="card-img-top" alt="Venda">
-                    <div class="card-body">
-                        <h5 class="card-title">Venda</h5>
-                        <p class="card-text">Registre vendas de produtos</p>
-                        <a href="api/venda/ler.php" class="btn btn-primary">Acessar</a>
-                    </div>
-                </div>
-            </div>
+        
 
             <div class="col">
                 <div class="card h-100">
