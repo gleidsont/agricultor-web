@@ -1,33 +1,22 @@
 <?php
-header("Content-Type: application/json; charset=UTF-8");
-require_once '../../config/db_connection.php';
-require_once '../../config/auth_check.php';
+require_once '../../includes/conexao.php';
 
-verificarAutenticacao();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $usuario_id = 1; // ajuste conforme o usuário logado
+    $produto = $_POST['produto'];
+    $quantidade = $_POST['quantidade'];
+    $valor = $_POST['valor'];
+    $data = $_POST['data'];
+    $tipo = $_POST['tipo_cadastro'];
 
-$data = json_decode(file_get_contents("php://input"));
+    $stmt = mysqli_prepare($conexao, "INSERT INTO caderneta (usuario_id, produto, quantidade, valor, data, tipo_cadastro) VALUES (?, ?, ?, ?, ?, ?)");
+    mysqli_stmt_bind_param($stmt, "isdsss", $usuario_id, $produto, $quantidade, $valor, $data, $tipo);
 
-$database = new Database();
-$db = $database->getConnection();
-
-$query = "INSERT INTO consumo 
-          (usuario_id, produto, quantidade, valor, data, observacoes) 
-          VALUES (?, ?, ?, ?, ?, ?)";
-
-$stmt = $db->prepare($query);
-$success = $stmt->execute([
-    $_SESSION['usuario_id'],
-    $data->produto,
-    $data->quantidade,
-    $data->valor,
-    $data->data,
-    $data->observacoes
-]);
-
-if ($success) {
-    echo json_encode(["success" => true, "message" => "Registro criado com sucesso"]);
-} else {
-    http_response_code(500);
-    echo json_encode(["message" => "Erro ao criar registro"]);
+    if (mysqli_stmt_execute($stmt)) {
+        header("Location: ler.php?sucesso=1");
+        exit;
+    } else {
+        echo "Erro ao cadastrar: " . mysqli_error($conn);
+    }
 }
 ?>
