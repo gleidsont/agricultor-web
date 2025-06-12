@@ -1,3 +1,8 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/agricultor-web/config.php';
+include INCLUDE_PATH . '/header.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

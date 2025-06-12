@@ -1,7 +1,7 @@
 <?php
 include 'includes/auth_admin_pesq_agricultor.php';
 include 'includes/conexao.php';
-include 'includes/header.php';
+include __DIR__ . '/includes/header.php';
 //echo '<pre>';
 //print_r($_SESSION);
 //echo '</pre>';
@@ -31,7 +31,20 @@ if ($id_agricultor) {
     </header>
 
     <main class="container my-5">
+        
+    
         <div class="row row-cols-3 row-cols-md-4 row-cols-lg-6 g-4">
+        <div class="col">
+                <div class="card h-100">
+                    <img src="images/caderneta.png" class="card-img-top" alt="Caderneta">
+                    <div class="card-body">
+                        <h5 class="card-title">Agricultores</h5>
+                        <p class="card-text">Veja quais agricultores estão cadastrados</p>
+                        <a href="api/agricultores/agricultores.php" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="col">
                 <div class="card h-100">
                     <img src="images/caderneta.png" class="card-img-top" alt="Caderneta">

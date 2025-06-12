@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-agro">
     <div class="container">
-    <a href="javascript:history.back()" class="btn btn-sm btn-outline-primary me-3">⬅ Voltar Página</a>
+        <a href="javascript:history.back()" class="btn btn-sm btn-voltar me-3">⬅ Voltar Página</a>
         <a class="navbar-brand" href="/agricultor-web/index.php">Caderno Agroecológico & Solidário</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>

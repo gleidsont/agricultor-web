@@ -1,0 +1,141 @@
+:root {
+  /* Cores base */
+  --verde-escuro: #2E7043;      /* Cor primária - verde mais escuro */
+  --verde-claro: #44A840;       /* Cor secundária - verde vibrante */
+  --destaque: #FFBA2E;          /* Cor de destaque - amarelo/laranja */
+  --neutro: #583F28;            /* Cor neutra - marrom escuro */
+  
+  /* Cores para texto */
+  --texto-escuro: #333333;
+  --texto-claro: #f8f8f8;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--texto-escuro);
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--verde-escuro);
+  color: var(--texto-claro);
+  padding: 1rem 2rem;
+}
+
+/* Navegação */
+nav {
+  background-color: var(--verde-claro);
+}
+
+nav a {
+  color: var(--texto-claro);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+  background-color: var(--destaque);
+  color: var(--neutro);
+}
+
+/* Botões */
+.button {
+  background-color: var(--verde-claro);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--destaque);
+  color: var(--neutro);
+}
+
+.button-secondary {
+  background-color: var(--destaque);
+  color: var(--neutro);
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  background-color: var(--verde-escuro);
+  color: var(--texto-claro);
+  padding: 0.75rem 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--neutro);
+  color: var(--texto-claro);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* Destaques */
+.highlight {
+  color: var(--destaque);
+  font-weight: bold;
+}
+
+/* Bordas e separadores */
+.separator {
+  border-top: 2px solid var(--verde-claro);
+  margin: 1rem 0;
+}
+
+/* NAVBAR PERSONALIZADO */
+.navbar-agro {
+  background-color: var(--verde-escuro) !important;
+  padding: 0.5rem 0;
+}
+
+.navbar-agro .navbar-brand {
+  color: white !important;
+  font-weight: 600;
+}
+
+.navbar-agro .nav-link {
+  color: white !important;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-agro .nav-link:hover {
+  color: var(--destaque) !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.btn-voltar {
+  background-color: var(--destaque);
+  color: var(--neutro) !important;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background-color: #e0a825;
+  transform: translateX(-2px);
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
