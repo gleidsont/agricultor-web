@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Jun-2025 às 01:17
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 7.4.33
+-- Tempo de geração: 13/06/2025 às 19:46
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `caderneta`
+-- Estrutura para tabela `agricultores`
+--
+
+CREATE TABLE `agricultores` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(150) NOT NULL,
+  `organizacao` varchar(150) DEFAULT NULL,
+  `uf` char(2) DEFAULT NULL,
+  `municipio` varchar(100) DEFAULT NULL,
+  `comunidade` varchar(100) DEFAULT NULL,
+  `data_registro` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `agricultores`
+--
+
+INSERT INTO `agricultores` (`id`, `nome`, `organizacao`, `uf`, `municipio`, `comunidade`, `data_registro`) VALUES
+(3, 'Teste', 'teste', 'MG', 'Teste', 'Teste', '2025-06-12 22:02:23');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `caderneta`
 --
 
 CREATE TABLE `caderneta` (
@@ -42,7 +65,7 @@ CREATE TABLE `caderneta` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `configuracoes`
+-- Estrutura para tabela `configuracoes`
 --
 
 CREATE TABLE `configuracoes` (
@@ -55,7 +78,7 @@ CREATE TABLE `configuracoes` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `logs`
+-- Estrutura para tabela `logs`
 --
 
 CREATE TABLE `logs` (
@@ -69,7 +92,7 @@ CREATE TABLE `logs` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -86,7 +109,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Despejando dados para a tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `data_nascimento`, `email`, `telefone`, `endereco`, `data_cadastro`, `senha`, `perfil`) VALUES
@@ -99,7 +122,13 @@ INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `data_nascimento`, `email`, `telefo
 --
 
 --
--- Índices para tabela `caderneta`
+-- Índices de tabela `agricultores`
+--
+ALTER TABLE `agricultores`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `caderneta`
 --
 ALTER TABLE `caderneta`
   ADD PRIMARY KEY (`id`),
@@ -107,14 +136,14 @@ ALTER TABLE `caderneta`
   ADD KEY `idx_data_caderneta` (`data`);
 
 --
--- Índices para tabela `configuracoes`
+-- Índices de tabela `configuracoes`
 --
 ALTER TABLE `configuracoes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `usuario_id` (`usuario_id`);
 
 --
--- Índices para tabela `logs`
+-- Índices de tabela `logs`
 --
 ALTER TABLE `logs`
   ADD PRIMARY KEY (`id`),
@@ -122,7 +151,7 @@ ALTER TABLE `logs`
   ADD KEY `idx_data_log` (`data_registro`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
@@ -130,14 +159,20 @@ ALTER TABLE `usuarios`
   ADD KEY `idx_cpf` (`cpf`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `agricultores`
+--
+ALTER TABLE `agricultores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `caderneta`
 --
 ALTER TABLE `caderneta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `configuracoes`
@@ -158,23 +193,23 @@ ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `caderneta`
+-- Restrições para tabelas `caderneta`
 --
 ALTER TABLE `caderneta`
   ADD CONSTRAINT `caderneta_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `configuracoes`
+-- Restrições para tabelas `configuracoes`
 --
 ALTER TABLE `configuracoes`
   ADD CONSTRAINT `configuracoes_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `logs`
+-- Restrições para tabelas `logs`
 --
 ALTER TABLE `logs`
   ADD CONSTRAINT `logs_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
