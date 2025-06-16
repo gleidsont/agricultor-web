@@ -2,6 +2,8 @@
 <footer class="mt-4">
     <div class="container">
         <p class="text-center">© <?php echo date('Y'); ?> PICAPS - Fiocruz</p>
+    <div class="container text-center">
+        <p>© <?php echo date('Y'); ?> Caderno Agroecológico &amp; Solidário - PICAPS/Fiocruz</p>
     </div>
 </footer>
 

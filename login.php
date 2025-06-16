@@ -27,6 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['usuario_id'] = $usuario['id'];
             $_SESSION['usuario_nome'] = $usuario['nome'];
             $_SESSION['usuario_perfil'] = $usuario['perfil'];
+
+            if ($usuario['perfil'] === 'Agricultor') {
+                $_SESSION['agricultor_selecionado'] = $usuario['id'];
+            } else {
+                unset($_SESSION['agricultor_selecionado']);
+            }
+
             header("Location: index.php");
             exit;
         } else {

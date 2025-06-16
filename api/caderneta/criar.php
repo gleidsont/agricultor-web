@@ -1,8 +1,14 @@
 <?php
 require_once '../../includes/conexao.php';
+include '../../includes/auth_admin_pesq_agricultor.php';
+
+$usuario_id = $_SESSION['agricultor_selecionado'] ?? null;
+if (!$usuario_id) {
+    header('Location: ../../selecionar_agricultor.php');
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $usuario_id = 1; // ajuste conforme o usuário logado
     $produto = $_POST['produto'];
     $quantidade = $_POST['quantidade'];
     $valor = $_POST['valor'];

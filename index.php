@@ -7,26 +7,35 @@ include __DIR__ . '/includes/header.php';
 //echo '</pre>';
 
 $id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
-$sql = "SELECT nome FROM usuarios WHERE id = $id_agricultor";
-$nome_agricultor = '';
-
-if ($id_agricultor) {
-    $stmt = $conexao->prepare("SELECT nome FROM usuarios WHERE id = ?");
-    $stmt->bind_param("i", $id_agricultor);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($row = $result->fetch_assoc()) {
-        $nome_agricultor = $row['nome'];
+if (!$id_agricultor) {
+    if ($_SESSION['usuario_perfil'] === 'Agricultor') {
+        $id_agricultor = $_SESSION['usuario_id'];
+        $_SESSION['agricultor_selecionado'] = $id_agricultor;
+    } else {
+        header('Location: selecionar_agricultor.php');
+        exit;
     }
 }
+
+$stmt = $conexao->prepare("SELECT nome FROM usuarios WHERE id = ?");
+$stmt->bind_param("i", $id_agricultor);
+$stmt->execute();
+$result = $stmt->get_result();
+$nome_agricultor = '';
+
+if ($row = $result->fetch_assoc()) {
+    $nome_agricultor = $row['nome'];
+}
+
 
 ?>
 <body>
     <header class="bg-success text-white py-3">
+<header class="bg-success text-white py-3">
         <div class="container">
             <h2>Controle de Produção Agrícola</h2>
             <h4>Agricultor selecionado: <?= htmlspecialchars($nome_agricultor) ?></h4>
+            <h5>Agricultor selecionado: <?= htmlspecialchars($nome_agricultor) ?></h5>
         </div>
     </header>
 
@@ -66,6 +75,17 @@ if ($id_agricultor) {
                     </div>
                 </div>
             </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/estatistica.png" class="card-img-top" alt="Relatórios">
+                    <div class="card-body">
+                        <h5 class="card-title">Relatórios</h5>
+                        <p class="card-text">Gere relatórios e exporte planilhas</p>
+                        <a href="relatorios.php" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
         
 
             <div class="col">
@@ -102,3 +122,4 @@ if ($id_agricultor) {
 
 </body>
 </html>
+<?php include 'includes/footer.php'; ?>

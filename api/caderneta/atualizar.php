@@ -2,6 +2,13 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 require_once '../../includes/conexao.php';
+include '../../includes/auth_admin_pesq_agricultor.php';
+
+$id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
+if (!$id_agricultor) {
+    header('Location: ../../selecionar_agricultor.php');
+    exit;
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];

@@ -1,5 +1,12 @@
 <?php
 require_once '../../includes/conexao.php';
+include '../../includes/auth_admin_pesq_agricultor.php';
+
+$id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
+if (!$id_agricultor) {
+    header('Location: ../../selecionar_agricultor.php');
+    exit;
+}
 
 if (!isset($_GET['id'])) {
     echo "ID não informado.";

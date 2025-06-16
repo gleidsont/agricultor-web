@@ -10,7 +10,7 @@ if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['usuario_perfil'])) {
 }
 
 // Permite admin, pesquisador ou agricultor
-$perfisPermitidos = ['Administrador', 'Pesquisador', 'Agricultor'];
+$perfisPermitidos = ['Administrador', 'Pesquisador Popular', 'Agricultor'];
 
 if (!in_array($_SESSION['usuario_perfil'], $perfisPermitidos)) {
     echo "<h3 style='color: red; text-align: center; margin-top: 50px;'>Acesso não autorizado.</h3>";

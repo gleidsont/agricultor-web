@@ -1,6 +1,14 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/agricultor-web/config.php';
 include INCLUDE_PATH . '/header.php';
+include '../../includes/auth_admin_pesq_agricultor.php';
+require_once '../../includes/conexao.php';
+
+$id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
+if (!$id_agricultor) {
+    header('Location: ../../selecionar_agricultor.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +32,10 @@ include INCLUDE_PATH . '/header.php';
         </div>
 
         <?php
-        require_once '../../includes/conexao.php';
-        $stmt = $pdo->query("SELECT * FROM caderneta ORDER BY data DESC");
+        $stmt = $pdo->prepare("SELECT * FROM caderneta WHERE usuario_id = ? ORDER BY data DESC");
+        $stmt->bind_param('i', $id_agricultor);
+        $stmt->execute();
+        $result = $stmt->get_result();
         ?>
 
         <?php if (isset($_GET['atualizado'])): ?>
@@ -48,7 +58,7 @@ include INCLUDE_PATH . '/header.php';
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = mysqli_fetch_assoc($stmt)) {?>
+                <?php while ($row = mysqli_fetch_assoc($result)) {?>
                     <tr>
                         <td><?= htmlspecialchars($row['tipo_cadastro']) ?></td>
                         <td><?= htmlspecialchars($row['produto']) ?></td>

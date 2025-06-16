@@ -1,10 +1,19 @@
 <?php
 require_once '../../config.php';
 include INCLUDE_PATH . '/header.php';
+include '../../includes/auth_admin_pesq_agricultor.php';
 require_once '../../includes/conexao.php';
 
-$sql = "SELECT tipo_cadastro, COUNT(*) AS registros, SUM(quantidade) AS total_quantidade, SUM(valor) AS total_valor FROM caderneta GROUP BY tipo_cadastro";
-$result = $pdo->query($sql);
+$id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
+if (!$id_agricultor) {
+    header('Location: ../../selecionar_agricultor.php');
+    exit;
+}
+
+$stmt = $pdo->prepare("SELECT tipo_cadastro, COUNT(*) AS registros, SUM(quantidade) AS total_quantidade, SUM(valor) AS total_valor FROM caderneta WHERE usuario_id = ? GROUP BY tipo_cadastro");
+$stmt->bind_param('i', $id_agricultor);
+$stmt->execute();
+$result = $stmt->get_result();
 $estatisticas = [];
 if ($result) {
     while ($row = $result->fetch_assoc()) {
