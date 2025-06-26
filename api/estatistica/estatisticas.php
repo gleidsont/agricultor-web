@@ -1,16 +1,24 @@
 <?php
-require_once '../../config.php';
-include INCLUDE_PATH . '/header.php';
-include '../../includes/auth_admin_pesq_agricultor.php';
+session_start();
+include '../../includes/header.php';
 require_once '../../includes/conexao.php';
-
 $id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
 if (!$id_agricultor) {
     header('Location: ../../selecionar_agricultor.php');
     exit;
 }
 
-$stmt = $pdo->prepare("SELECT tipo_cadastro, COUNT(*) AS registros, SUM(quantidade) AS total_quantidade, SUM(valor) AS total_valor FROM caderneta WHERE usuario_id = ? GROUP BY tipo_cadastro");
+$stmt = $conexao->prepare("SELECT nome FROM agricultores WHERE id = ?");
+$stmt->bind_param("i", $id_agricultor);
+$stmt->execute();
+$result = $stmt->get_result();
+$nome_agricultor = '';
+
+if ($row = $result->fetch_assoc()) {
+    $nome_agricultor = $row['nome'];
+}
+
+$stmt = $conexao->prepare("SELECT tipo_cadastro, COUNT(*) AS registros, SUM(quantidade) AS total_quantidade, SUM(valor) AS total_valor FROM caderneta WHERE usuario_id = ? GROUP BY tipo_cadastro");
 $stmt->bind_param('i', $id_agricultor);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -49,4 +57,4 @@ if ($result) {
     </table>
 </div>
 
-<?php include INCLUDE_PATH . '/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>

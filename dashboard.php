@@ -1,5 +1,7 @@
 <?php
-include 'includes/auth_check.php';
+session_start();
+include 'includes/conexao.php';
+include 'includes/header.php';
 echo "<h1>Bem-vindo, {$_SESSION['usuario_nome']}!</h1>";
 echo "<p>Seu perfil: {$_SESSION['usuario_perfil']}</p>";
 

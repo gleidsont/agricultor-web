@@ -1,30 +1,46 @@
 :root {
   /* Cores base */
-  --verde-escuro: #2E7043;      /* Cor primária - verde mais escuro */
-  --verde-claro: #44A840;       /* Cor secundária - verde vibrante */
-  --destaque: #FFBA2E;          /* Cor de destaque - amarelo/laranja */
-  --neutro: #583F28;            /* Cor neutra - marrom escuro */
-  
+  --verde-escuro: #2e7043; /* Cor primária - verde mais escuro */
+  --verde-claro: #44a840; /* Cor secundária - verde vibrante */
+  --destaque: #ffba2e; /* Cor de destaque - amarelo/laranja */
+  --neutro: #583f28; /* Cor neutra - marrom escuro */
+
   /* Cores para texto */
   --texto-escuro: #333333;
   --texto-claro: #f8f8f8;
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   color: var(--texto-escuro);
   background-color: #f5f5f5;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da viewport */
 }
 
-/* Cabeçalho */
+main {
+  flex: 1 0 auto; /* Cresce, não encolhe, preenche o espaço */
+  padding-bottom: 2rem; /* Espaço antes do footer */
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: var(--neutro);
+  color: var(--texto-claro);
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  margin-top: auto; /* Empurra para baixo */
+}
+
 header {
   background-color: var(--verde-escuro);
   color: var(--texto-claro);
   padding: 1rem 2rem;
 }
 
-/* Navegação */
 nav {
   background-color: var(--verde-claro);
 }
@@ -40,7 +56,6 @@ nav a:hover {
   color: var(--neutro);
 }
 
-/* Botões */
 .button {
   background-color: var(--verde-claro);
   color: white;
@@ -65,7 +80,7 @@ nav a:hover {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card-header {
@@ -73,14 +88,6 @@ nav a:hover {
   color: var(--texto-claro);
   padding: 0.75rem 1rem;
   border-radius: 8px 8px 0 0;
-}
-
-/* Rodapé */
-footer {
-  background-color: var(--neutro);
-  color: var(--texto-claro);
-  padding: 1.5rem;
-  text-align: center;
 }
 
 /* Destaques */
@@ -139,3 +146,33 @@ footer {
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+
+/* Estilos para a tabela de relatórios */
+#relatorioTable {
+    width: 100%;
+}
+
+#relatorioTable th {
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+}
+
+#relatorioTable td, #relatorioTable th {
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+/* Ajustes para os gráficos */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* Mensagem quando não há dados */
+.text-muted {
+    color: #6c757d !important;
+}
+

@@ -1,4 +1,5 @@
 <?php
+include '../../includes/header.php';
 require_once '../../includes/conexao.php';
 
 if (!isset($_GET['id'])) {
@@ -20,11 +21,13 @@ if (!$agricultor = mysqli_fetch_assoc($result)) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Editar Agricultor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container mt-5">
         <h2>Editar Agricultor</h2>
@@ -58,4 +61,5 @@ if (!$agricultor = mysqli_fetch_assoc($result)) {
         </form>
     </div>
 </body>
+
 </html>

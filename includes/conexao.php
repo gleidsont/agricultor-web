@@ -6,13 +6,12 @@ $dbname = 'agricultor_db';
 $user = 'root';
 $pass = '';
 
-    try {
-        $conexao = new mysqli($host, $user, $pass, $dbname);
-    
-        $pdo = $conexao; //new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
-        // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        // $conexao = $pdo;
-    } catch (PDOException $e) {
-        die("Erro ao conectar: " . $e->getMessage());
-    }
-    ?>
+try {
+    $conexao = new mysqli($host, $user, $pass, $dbname);
+
+    $pdo = $conexao; //new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+    // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // $conexao = $pdo;
+} catch (PDOException $e) {
+    die("Erro ao conectar: " . $e->getMessage());
+}

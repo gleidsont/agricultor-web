@@ -16,4 +16,3 @@ if (isset($_GET['id'])) {
 } else {
     echo "ID não informado.";
 }
-?>

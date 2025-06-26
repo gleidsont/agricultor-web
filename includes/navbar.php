@@ -13,7 +13,7 @@
                 <li class="nav-item"><a class="nav-link" href="/agricultor-web/api/estatistica/estatisticas.php">Estatísticas</a></li>
                 <li class="nav-item"><a class="nav-link" href="/agricultor-web/relatorios.php">Relatórios</a></li>
                 <?php if (isset($_SESSION['usuario_id'])): ?>
-                    <li class="nav-item"><a class="nav-link" href="/agricultor-web/perfil.php">Painel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/agricultor-web/perfil.php">Painel de Usuários</a></li>
                     <li class="nav-item"><a class="nav-link" href="/agricultor-web/logout.php">Sair</a></li>
                 <?php else: ?>
                     <li class="nav-item"><a class="nav-link" href="/agricultor-web/login.php">Login</a></li>

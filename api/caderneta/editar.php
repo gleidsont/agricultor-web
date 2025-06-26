@@ -1,11 +1,21 @@
 <?php
+session_start();
+include '../../includes/header.php';
 require_once '../../includes/conexao.php';
-include '../../includes/auth_admin_pesq_agricultor.php';
-
 $id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
 if (!$id_agricultor) {
     header('Location: ../../selecionar_agricultor.php');
     exit;
+}
+
+$stmt = $conexao->prepare("SELECT nome FROM agricultores WHERE id = ?");
+$stmt->bind_param("i", $id_agricultor);
+$stmt->execute();
+$result = $stmt->get_result();
+$nome_agricultor = '';
+
+if ($row = $result->fetch_assoc()) {
+    $nome_agricultor = $row['nome'];
 }
 
 if (!isset($_GET['id'])) {
@@ -24,16 +34,17 @@ if (!$registro = mysqli_fetch_assoc($result)) {
     echo "Registro não encontrado.";
     exit;
 }
-?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Editar Registro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+?>
+<header class="bg-success text-white py-3">
+    <div class="container d-flex center-content-between align-items-center">
+        <h5 class="mb-0 me-3">Agricultor selecionado: <?= htmlspecialchars($nome_agricultor) ?></h5>
+        <a href="../../selecionar_agricultor.php" class="btn btn-light btn-sm">
+            <i class="fas fa-exchange-alt"></i> Trocar Agricultor
+        </a>
+    </div>
+</header>
+
     <div class="container mt-5">
         <h2>Editar Registro da Caderneta</h2>
 
@@ -71,7 +82,7 @@ if (!$registro = mysqli_fetch_assoc($result)) {
             </div>
 
             <div class="d-flex justify-content-between">
-                <a href="../caderneta.php" class="btn btn-secondary">Voltar</a>
+                <a href="ler.php" class="btn btn-secondary">Voltar</a>
                 <button type="submit" class="btn btn-primary">Salvar Alterações</button>
             </div>
         </form>

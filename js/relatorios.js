@@ -1,136 +1,85 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let valorChart, quantidadeChart;
-    let currentFilters = {
-        tipo: 'consumo',
-        data_inicio: '',
-        data_fim: ''
-    };
+    // Elementos do DOM com verificação
+    const filtroForm = document.getElementById('filtroForm');
+    if (!filtroForm) {
+        console.error('Formulário não encontrado! Verifique o ID.');
+        return;
+    }
 
-    // Inicializar datas padrão (mês atual)
-    const today = new Date();
-    const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
-    const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+    // Gráficos
+    const valorChartCtx = document.getElementById('valorChart').getContext('2d');
+    const quantidadeChartCtx = document.getElementById('quantidadeChart').getContext('2d');
+    
+    // Inicializa gráficos
+    const valorChart = new Chart(valorChartCtx, {
+        type: 'bar',
+        data: { labels: [], datasets: [] },
+        options: getChartOptions('Valor (R$)')
+    });
+    
+    const quantidadeChart = new Chart(quantidadeChartCtx, {
+        type: 'bar',
+        data: { labels: [], datasets: [] },
+        options: getChartOptions('Quantidade')
+    });
 
-    document.getElementById('data_inicio').valueAsDate = firstDay;
-    document.getElementById('data_fim').valueAsDate = lastDay;
-
-    currentFilters.data_inicio = formatDate(firstDay);
-    currentFilters.data_fim = formatDate(lastDay);
-
-    // Carregar dados iniciais
-    loadData();
-
-    // Formulário de filtro
-    document.getElementById('filtroForm').addEventListener('submit', function(e) {
-        e.preventDefault();
+    // Função para carregar dados
+    function loadData(params = '') {
+        const apiUrl = '/agricultor-web/api/relatorios/relatorios.php';
+        console.log('Carregando dados de:', apiUrl + '?' + params);
         
-        currentFilters = {
-            tipo: document.getElementById('tipo').value,
-            data_inicio: document.getElementById('data_inicio').value,
-            data_fim: document.getElementById('data_fim').value
-        };
-
-        loadData();
-    });
-
-    // Botão exportar Excel
-    document.getElementById('exportExcel').addEventListener('click', function() {
-        exportToExcel();
-    });
-
-    function formatDate(date) {
-        return date.toISOString().split('T')[0];
-    }
-
-    function loadData() {
-        fetch(`/api/relatorios/gerar_relatorio.php?${new URLSearchParams(currentFilters)}`)
-            .then(response => response.json())
-            .then(data => {
-                updateTable(data);
-                updateCharts(data);
+        fetch(apiUrl + '?' + params)
+            .then(response => {
+                if (!response.ok) throw new Error(`Erro ${response.status}`);
+                return response.json();
             })
-            .catch(error => console.error('Erro:', error));
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                updateCharts(data);
+                updateTable(data.detalhes);
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao carregar dados: ' + error.message);
+            });
     }
 
-    function updateTable(data) {
-        const tableBody = document.querySelector('#relatorioTable tbody');
-        tableBody.innerHTML = '';
-
-        data.forEach(item => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${item.produto}</td>
-                <td>${item.quantidade}</td>
-                <td>R$ ${item.valor.toFixed(2)}</td>
-                <td>${new Date(item.data).toLocaleDateString('pt-BR')}</td>
-                <td>${item.observacoes || '-'}</td>
-            `;
-            tableBody.appendChild(row);
-        });
-    }
-
+    // Atualiza gráficos
     function updateCharts(data) {
-        const labels = data.map(item => item.produto);
-        const valores = data.map(item => item.valor);
-        const quantidades = data.map(item => item.quantidade);
-
-        // Destruir gráficos existentes se eles existirem
-        if (valorChart) valorChart.destroy();
-        if (quantidadeChart) quantidadeChart.destroy();
-
-        // Gráfico de valores
-        const valorCtx = document.getElementById('valorChart').getContext('2d');
-        valorChart = new Chart(valorCtx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Valor (R$)',
-                    data: valores,
-                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // Gráfico de quantidades
-        const quantidadeCtx = document.getElementById('quantidadeChart').getContext('2d');
-        quantidadeChart = new Chart(quantidadeCtx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Quantidade',
-                    data: quantidades,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 2,
-                    tension: 0.1,
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+        valorChart.data.labels = data.labels;
+        valorChart.data.datasets = [{
+            label: 'Valor Total',
+            data: data.valores,
+            backgroundColor: 'rgba(54, 162, 235, 0.7)'
+        }];
+        valorChart.update();
+        
+        quantidadeChart.data.labels = data.labels;
+        quantidadeChart.data.datasets = [{
+            label: 'Quantidade Total',
+            data: data.quantidades,
+            backgroundColor: 'rgba(75, 192, 192, 0.7)'
+        }];
+        quantidadeChart.update();
     }
 
-    function exportToExcel() {
-        const params = new URLSearchParams(currentFilters);
-        window.location.href = `/api/relatorios/exportar_excel.php?${params}`;
+    // Configuração dos gráficos
+    function getChartOptions(title) {
+        return {
+            responsive: true,
+            plugins: {
+                title: { display: true, text: title }
+            }
+        };
     }
+
+    // Event listener
+    filtroForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(filtroForm);
+        loadData(new URLSearchParams(formData).toString());
+    });
+
+    // Carrega dados iniciais
+    loadData();
 });
