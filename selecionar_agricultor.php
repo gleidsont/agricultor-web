@@ -1,7 +1,11 @@
 <?php
+session_start();
 include 'includes/conexao.php';
 include 'includes/header.php';
-
+if (empty($_SESSION['usuario_id'])){
+    header("Location: login.php");
+    exit;
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['agricultor_selecionado'] = $_POST['agricultor_id'];
     header("Location: index.php");
@@ -13,13 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $sql = "SELECT id, nome FROM agricultores";
 $result = $conexao->query($sql);
 
-?>
-
-<?php
-session_start();
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
 ?>
 
 <div class="container mt-5" style="max-width: 500px;">

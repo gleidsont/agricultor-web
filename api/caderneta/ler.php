@@ -2,6 +2,10 @@
 session_start();
 include '../../includes/header.php';
 require_once '../../includes/conexao.php';
+if (empty($_SESSION['usuario_id'])){
+    header("Location: login.php");
+    exit;
+}
 $id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
 if (!$id_agricultor) {
     header('Location: ../../selecionar_agricultor.php');

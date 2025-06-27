@@ -33,74 +33,95 @@ $resultado = mysqli_query($conexao, $sql);
 </header>
 
 <main class="container my-5">
-    <div class="row row-cols-3 row-cols-md-4 row-cols-lg-6 g-4">
-        <div class="col">
-            <div class="card h-100">
-                <img src="images/caderneta.png" class="card-img-top" alt="Caderneta">
-                <div class="card-body">
-                    <h5 class="card-title">Agricultores</h5>
+    <div>
+    <div class="row mb-4 justify-content-center" >
+        <div class="col-md-3 mb-4">
+            <div class="card border-success h-100">
+                <a href="api/agricultores/agricultores.php" class="stretched-link"></a>
+                <div class="card-body text-center">
+                    <h4 class="card-title"><img src="images/agricultor.png" class="img-fluid" alt="Caderneta" style="max-height: 150px;"></h4>
+                    <p class="card-text">
+                    <h4>Agricultores</h4>
+                    </p>
                     <p class="card-text">Veja quais agricultores estão cadastrados</p>
-                    <a href="api/agricultores/agricultores.php" class="btn btn-primary">Acessar</a>
+                    <div class="btn btn-outline-success" style="z-index: 2;">Gerenciar</div>
                 </div>
             </div>
         </div>
 
-        <div class="col">
-            <div class="card h-100">
-                <img src="images/caderneta.png" class="card-img-top" alt="Caderneta">
-                <div class="card-body">
-                    <h5 class="card-title">Caderneta</h5>
+        <div class="col-md-3 mb-4">
+            <div class="card border-success h-100">
+                <a href="api/caderneta/ler.php" class="stretched-link"></a>
+                <div class="card-body text-center">
+                    <h4 class="card-title"><img src="images/caderneta_digital.png" class="img-fluid" alt="Caderneta" style="max-height: 150px;"></h4>
+                    <p class="card-text">
+                    <h4>Caderneta Digital</h4>
+                    </p>
                     <p class="card-text">Registre aqui tudo o que foi consumido, trocado, doado ou vendido</p>
-                    <a href="api/caderneta/ler.php" class="btn btn-primary">Acessar</a>
+                    <div class="btn btn-outline-success" style="z-index: 2;">Gerenciar</div>
                 </div>
             </div>
         </div>
 
-        <div class="col">
-            <div class="card h-100">
-                <img src="images/estatistica.png" class="card-img-top" alt="Estatística">
-                <div class="card-body">
-                    <h5 class="card-title">Estatística</h5>
-                    <p class="card-text">Veja aqui as estatísticas deste agricultor</p>
-                    <a href="api/estatistica/estatisticas.php" class="btn btn-primary">Acessar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="images/estatistica.png" class="card-img-top" alt="Relatórios">
-                <div class="card-body">
-                    <h5 class="card-title">Relatórios</h5>
-                    <p class="card-text">Gere relatórios e exporte planilhas</p>
-                    <a href="relatorios.php" class="btn btn-primary">Acessar</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="images/configuracao.png" class="card-img-top" alt="Venda">
-                <div class="card-body">
-                    <h5 class="card-title">Cadastro</h5>
-                    <p class="card-text">Ajustes</p>
-                    <a href="cadastro.php" class="btn btn-primary">Acessar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card h-100">
-                <img src="images/login.png" class="card-img-top" alt="Venda">
-                <div class="card-body">
-                    <h5 class="card-title">Login</h5>
-                    <p class="card-text">Realize o Login para acessar</p>
-                    <a href="login.php" class="btn btn-primary">Acessar</a>
+        <div class="col-md-3 mb-4">
+            <div class="card border-success h-100">
+                <a href="fotos.php" class="stretched-link"></a>
+                <div class="card-body text-center">
+                    <h4 class="card-title"><img src="images/caderneta.png" class="img-fluid" alt="Caderneta" style="max-height: 150px;"></h4>
+                    <p class="card-text">
+                    <h4>Fotos da Caderneta</h4>
+                    </p>
+                    <p class="card-text">Tire as fotos da caderneta e deixe registrado o que foi escrito</p>
+                    <div class="btn btn-outline-success" style="z-index: 2;">Gerenciar</div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="row mb-4 justify-content-center" >
+        <div class="col-md-3 mb-4">
+            <div class="card border-success h-100">
+                <a href="api/estatistica/estatisticas.php" class="stretched-link"></a>
+                <div class="card-body text-center">
+                    <h4 class="card-title"><img src="images/estatistica.png" class="img-fluid" alt="Caderneta" style="max-height: 150px;"></h4>
+                    <p class="card-text">
+                    <h4>Estatística</h4>
+                    </p>
+                    <p class="card-text">Veja aqui as estatísticas deste agricultor</p>
+                    <div class="btn btn-outline-success" style="z-index: 2;">Gerenciar</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card border-success h-100">
+                <a href="relatorios.php" class="stretched-link"></a>
+                <div class="card-body text-center">
+                    <h4 class="card-title"><img src="images/estatistica.png" class="img-fluid" alt="Caderneta" style="max-height: 150px;"></h4>
+                    <p class="card-text">
+                    <h4>Relatórios</h4>
+                    </p>
+                    <p class="card-text">Gere relatórios e exporte planilhas</p>
+                    <div class="btn btn-outline-success" style="z-index: 2;">Gerenciar</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card border-success h-100">
+                <a href="configuracoes.php" class="stretched-link"></a>
+                <div class="card-body text-center">
+                    <h4 class="card-title"><img src="images/configuracao_novo.png" class="img-fluid" alt="Caderneta" style="max-height: 150px;"></h4>
+                    <p class="card-text">
+                    <h4>Configurações</h4>
+                    </p>
+                    <p class="card-text">Crie usuários, insira novos valores em tabelas, entre outras configurações</p>
+                    <div class="btn btn-outline-success" style="z-index: 2;">Gerenciar</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </main>

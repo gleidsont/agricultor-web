@@ -2,6 +2,10 @@
 session_start();
 include 'includes/conexao.php';
 include 'includes/header.php';
+if (empty($_SESSION['usuario_id'])){
+    header("Location: login.php");
+    exit;
+}
 echo "<h1>Bem-vindo, {$_SESSION['usuario_nome']}!</h1>";
 echo "<p>Seu perfil: {$_SESSION['usuario_perfil']}</p>";
 

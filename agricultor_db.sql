@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/06/2025 às 19:46
+-- Tempo de geração: 27/06/2025 às 07:00
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `agricultores` (
 --
 
 INSERT INTO `agricultores` (`id`, `nome`, `organizacao`, `uf`, `municipio`, `comunidade`, `data_registro`) VALUES
-(3, 'Teste', 'teste', 'MG', 'Teste', 'Teste', '2025-06-12 22:02:23');
+(3, 'Teste', 'teste', 'MG', 'Teste', 'Teste', '2025-06-12 22:02:23'),
+(4, 'Teste 2', 'Teste 2', 'DF', 'Brasilia', 'Teste 2', '2025-06-27 02:30:36');
 
 -- --------------------------------------------------------
 
@@ -62,6 +63,14 @@ CREATE TABLE `caderneta` (
   `data_registro` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Despejando dados para a tabela `caderneta`
+--
+
+INSERT INTO `caderneta` (`id`, `usuario_id`, `produto`, `quantidade`, `valor`, `data`, `observacoes`, `tipo_cadastro`, `data_registro`) VALUES
+(3, 3, '23', 123.00, 321.00, '2025-06-09', NULL, 'CONSUMO', '2025-06-26 01:38:32'),
+(4, 3, '213', 11.00, 22.00, '2025-06-20', NULL, 'TROCA', '2025-06-26 01:41:55');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +83,27 @@ CREATE TABLE `configuracoes` (
   `tema` varchar(20) DEFAULT 'claro',
   `notificacoes` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `fotos_agricultor`
+--
+
+CREATE TABLE `fotos_agricultor` (
+  `id` int(11) NOT NULL,
+  `agricultor_id` int(11) NOT NULL,
+  `caminho` varchar(255) NOT NULL,
+  `nome_arquivo` varchar(255) NOT NULL,
+  `data_upload` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `fotos_agricultor`
+--
+
+INSERT INTO `fotos_agricultor` (`id`, `agricultor_id`, `caminho`, `nome_arquivo`, `data_upload`) VALUES
+(2, 3, 'uploads/agricultores/3/Figura-1-Caderneta-Agroecologica-CAMPONESA-C.png', 'Figura-1-Caderneta-Agroecologica-CAMPONESA-C.png', '2025-06-27 02:20:17');
 
 -- --------------------------------------------------------
 
@@ -104,18 +134,16 @@ CREATE TABLE `usuarios` (
   `telefone` varchar(20) DEFAULT NULL,
   `endereco` text DEFAULT NULL,
   `data_cadastro` timestamp NOT NULL DEFAULT current_timestamp(),
-  `senha` varchar(255) NOT NULL,
-  `perfil` enum('Administrador','Pesquisador Popular','Agricultor') NOT NULL DEFAULT 'Agricultor'
+  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `data_nascimento`, `email`, `telefone`, `endereco`, `data_cadastro`, `senha`, `perfil`) VALUES
-(1, 'Administrador', '000.000.000-00', '2000-01-01', 'admin@example.com', '(00) 00000-0000', 'Endereço inicial', '2025-04-03 12:33:50', '1234', 'Agricultor'),
-(2, 'dasdsa', '2132131211', '0000-00-00', 'dsadas@dsadsa', '2312321312', NULL, '2025-05-13 17:00:42', '$2y$10$QfbCrjARKpcqmRCeeI3UU.rO6CfB/hWkrgl5ZkDWRCGh98ylTJ3/S', 'Agricultor'),
-(3, 'Gleidson', '051.397.371-08', '0000-00-00', 'bob_glei@hotmail.com', '(61) 98672-7673', NULL, '2025-05-13 17:36:41', '$2y$10$lDfBjjjMd2MNUGmQb2X8N.8YqxZ/UBf4jHESOctChx5T8sKCatrgG', 'Administrador');
+INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `data_nascimento`, `email`, `telefone`, `endereco`, `data_cadastro`, `senha`) VALUES
+(3, 'Gleidson', '051.397.371-08', '2025-06-05', 'bob_glei@hotmail.com', '(61) 98672-7673', NULL, '2025-05-13 17:36:41', '$2y$10$lDfBjjjMd2MNUGmQb2X8N.8YqxZ/UBf4jHESOctChx5T8sKCatrgG'),
+(5, 'teste', '471.888.680-50', '2025-06-25', 'teste@teste', '(61) 98672-7673', NULL, '2025-06-27 03:52:06', '$2y$10$6jtiSry8fLzmfFK4kJWrveSsJn9.E6rfdWVcj6iZXTBfgWJywquS.');
 
 --
 -- Índices para tabelas despejadas
@@ -143,6 +171,13 @@ ALTER TABLE `configuracoes`
   ADD KEY `usuario_id` (`usuario_id`);
 
 --
+-- Índices de tabela `fotos_agricultor`
+--
+ALTER TABLE `fotos_agricultor`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `agricultor_id` (`agricultor_id`);
+
+--
 -- Índices de tabela `logs`
 --
 ALTER TABLE `logs`
@@ -166,19 +201,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `agricultores`
 --
 ALTER TABLE `agricultores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `caderneta`
 --
 ALTER TABLE `caderneta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `configuracoes`
 --
 ALTER TABLE `configuracoes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `fotos_agricultor`
+--
+ALTER TABLE `fotos_agricultor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `logs`
@@ -190,7 +231,7 @@ ALTER TABLE `logs`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para tabelas despejadas
@@ -207,6 +248,12 @@ ALTER TABLE `caderneta`
 --
 ALTER TABLE `configuracoes`
   ADD CONSTRAINT `configuracoes_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `fotos_agricultor`
+--
+ALTER TABLE `fotos_agricultor`
+  ADD CONSTRAINT `fotos_agricultor_ibfk_1` FOREIGN KEY (`agricultor_id`) REFERENCES `agricultores` (`id`);
 
 --
 -- Restrições para tabelas `logs`

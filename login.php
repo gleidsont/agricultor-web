@@ -26,13 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($senha, $usuario['senha'])) {
             $_SESSION['usuario_id'] = $usuario['id'];
             $_SESSION['usuario_nome'] = $usuario['nome'];
-            $_SESSION['usuario_perfil'] = $usuario['perfil'];
+            //$_SESSION['usuario_perfil'] = $usuario['perfil'];
 
-            if ($usuario['perfil'] === 'Agricultor') {
                 $_SESSION['agricultor_selecionado'] = $usuario['id'];
-            } else {
-                unset($_SESSION['agricultor_selecionado']);
-            }
 
             header("Location: index.php");
             exit;
