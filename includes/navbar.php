@@ -17,7 +17,7 @@
                     <li class="nav-item"><a class="nav-link" href="/agricultor-web/logout.php">Sair</a></li>
                 <?php else: ?>
                     <li class="nav-item"><a class="nav-link" href="/agricultor-web/login.php">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/agricultor-web/cadastro.php">Registrar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/agricultor-web/cadastro_novo_user.php">Registrar</a></li>
                 <?php endif; ?>
             </ul>
         </div>

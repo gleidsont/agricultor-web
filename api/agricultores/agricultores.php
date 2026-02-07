@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../../includes/header.php';
+
 require_once '../../includes/conexao.php';
 if (empty($_SESSION['usuario_id'])){
     header("Location: login.php");
@@ -11,6 +11,7 @@ if (!$id_agricultor) {
     header('Location: ../../selecionar_agricultor.php');
     exit;
 }
+include '../../includes/header.php';
 
 $stmt = $conexao->prepare("SELECT nome FROM agricultores WHERE id = ?");
 $stmt->bind_param("i", $id_agricultor);
@@ -66,7 +67,8 @@ $resultado = mysqli_query($conexao, $sql);
                         <td><?= htmlspecialchars($agricultor['municipio']) ?></td>
                         <td><?= htmlspecialchars($agricultor['comunidade']) ?></td>
                         <td>
-                            <a href="../caderneta/ler.php?id=<?= $agricultor['id'] ?>" class="btn btn-sm btn-success">Caderneta</a>
+                            
+                            <!-- <a href="../caderneta/ler.php?id=<?= $agricultor['id'] ?>" class="btn btn-sm btn-success">Caderneta</a> -->
                             <a href="editar.php?id=<?= $agricultor['id'] ?>" class="btn btn-sm btn-warning">Editar</a>
                             <a href="deletar.php?id=<?= $agricultor['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Deseja excluir este agricultor?')">Excluir</a>
                         </td>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../../includes/header.php';
+
 require_once '../../includes/conexao.php';
 if (empty($_SESSION['usuario_id'])){
     header("Location: login.php");
@@ -11,6 +11,7 @@ if (!$id_agricultor) {
     header('Location: ../../selecionar_agricultor.php');
     exit;
 }
+include '../../includes/header.php';
 
 $stmt = $conexao->prepare("SELECT nome FROM agricultores WHERE id = ?");
 $stmt->bind_param("i", $id_agricultor);

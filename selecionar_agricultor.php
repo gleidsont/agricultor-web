@@ -1,7 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
-include 'includes/conexao.php';
-include 'includes/header.php';
+
 if (empty($_SESSION['usuario_id'])){
     header("Location: login.php");
     exit;
@@ -11,6 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: index.php");
     exit;
 }
+
+include 'includes/conexao.php';
+include 'includes/header.php';
 
 
 // Buscar agricultores

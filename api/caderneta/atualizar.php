@@ -2,7 +2,7 @@
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-include '../../includes/header.php';
+
 require_once '../../includes/conexao.php';
 
 $id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
@@ -29,3 +29,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Erro ao atualizar: " . mysqli_error($conexao);
     }
 }
+include '../../includes/header.php';

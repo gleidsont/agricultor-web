@@ -1,6 +1,5 @@
 <?php
 session_start();
-include '../../includes/header.php';
 require_once '../../includes/conexao.php';
 
 $id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
@@ -8,6 +7,7 @@ if (!$id_agricultor) {
     header('Location: ../../selecionar_agricultor.php');
     exit;
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $produto = $_POST['produto'];
@@ -26,4 +26,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Erro ao cadastrar: " . mysqli_error($conn);
     }
 }
+include '../../includes/header.php';
 ?>

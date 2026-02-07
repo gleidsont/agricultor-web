@@ -1,7 +1,10 @@
 <?php
 session_start();
 include 'includes/conexao.php';
-
+if (empty($_SESSION['usuario_id'])){
+    header("Location: login.php");
+    exit;
+}
 // Ativa erros para debug (remova em produção)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);

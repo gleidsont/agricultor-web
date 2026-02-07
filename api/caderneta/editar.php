@@ -1,12 +1,13 @@
 <?php
 session_start();
-include '../../includes/header.php';
+
 require_once '../../includes/conexao.php';
 $id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
 if (!$id_agricultor) {
     header('Location: ../../selecionar_agricultor.php');
     exit;
 }
+include '../../includes/header.php';
 
 $stmt = $conexao->prepare("SELECT nome FROM agricultores WHERE id = ?");
 $stmt->bind_param("i", $id_agricultor);

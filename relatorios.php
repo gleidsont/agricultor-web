@@ -1,13 +1,14 @@
 <?php
 session_start();
 include 'includes/conexao.php';
-include 'includes/header.php';
+
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
     exit;
 }
+include 'includes/header.php';
 
 $id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
 if (!$id_agricultor) {
@@ -370,6 +371,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     <?php endif; ?>
 });
+</script>
+
+<script>
+function updateTable() {
+    console.warn("Função updateTable() chamada, mas ainda não foi implementada.");
+}
 </script>
 
 <?php include 'includes/footer.php'; ?>

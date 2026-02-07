@@ -1,0 +1,188 @@
+[27-Jun-2025 02:09:00 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'agricultor_db')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:09:28 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'agricultor_db')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:12:32 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'agricultor_db')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:13:35 America/Fortaleza] PHP Parse error:  syntax error, unexpected string content ";", expecting end of file in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 7
+[27-Jun-2025 02:13:52 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:14:23 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:14:33 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:14:34 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:15:46 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:15:46 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:16:27 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:17:41 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:17:48 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:18:06 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/fotos.php(4): require_once('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:18:13 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:19:24 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:19:27 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/login.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:19:29 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/cadastro.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:19:31 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:19:35 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/login.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:19:42 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:19:43 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 02:20:23 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 09:04:20 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/fotos.php(4): require_once('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 09:05:45 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/fotos.php(4): require_once('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 09:06:38 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/login.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 09:06:40 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/cadastro.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 09:06:42 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 09:06:45 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(3): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 09:08:42 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'tech4198_gleidson'@'localhost' to database 'tech4198_agricultor_db' in /home4/tech4198/public_html/agricultor-web/includes/conexao.php:10
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/includes/conexao.php(10): mysqli->__construct('localhost', 'tech4198_gleids...', Object(SensitiveParameterValue), 'tech4198_agricu...')
+#1 /home4/tech4198/public_html/agricultor-web/index.php(6): include('/home4/tech4198...')
+#2 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/includes/conexao.php on line 10
+[27-Jun-2025 09:10:34 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/tech4198/public_html/agricultor-web/includes/header.php:1) in /home4/tech4198/public_html/agricultor-web/index.php on line 10
+[27-Jun-2025 09:10:54 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/tech4198/public_html/agricultor-web/includes/header.php:1) in /home4/tech4198/public_html/agricultor-web/index.php on line 10
+[27-Jun-2025 09:10:54 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/tech4198/public_html/agricultor-web/includes/header.php:1) in /home4/tech4198/public_html/agricultor-web/index.php on line 10
+[27-Jun-2025 09:10:59 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/tech4198/public_html/agricultor-web/includes/header.php:1) in /home4/tech4198/public_html/agricultor-web/index.php on line 10
+[27-Jun-2025 09:15:57 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/tech4198/public_html/agricultor-web/includes/header.php:1) in /home4/tech4198/public_html/agricultor-web/selecionar_agricultor.php on line 11
+[27-Jun-2025 09:16:07 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/tech4198/public_html/agricultor-web/includes/header.php:1) in /home4/tech4198/public_html/agricultor-web/selecionar_agricultor.php on line 11
+[27-Jun-2025 09:17:31 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/tech4198/public_html/agricultor-web/includes/header.php:1) in /home4/tech4198/public_html/agricultor-web/selecionar_agricultor.php on line 14
+[27-Jun-2025 09:19:44 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/tech4198/public_html/agricultor-web/includes/header.php:1) in /home4/tech4198/public_html/agricultor-web/selecionar_agricultor.php on line 14
+[27-Jun-2025 09:39:55 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry '051.397.371-08' for key 'cpf' in /home4/tech4198/public_html/agricultor-web/cadastro_novo_user.php:45
+Stack trace:
+#0 /home4/tech4198/public_html/agricultor-web/cadastro_novo_user.php(45): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home4/tech4198/public_html/agricultor-web/cadastro_novo_user.php on line 45

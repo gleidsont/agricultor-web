@@ -1,12 +1,16 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
 include 'includes/conexao.php';
-include 'includes/header.php';
+
 $id_agricultor = $_SESSION['agricultor_selecionado'] ?? null;
 if (!$id_agricultor) {
     header('Location: selecionar_agricultor.php');
     exit;
 }
+include 'includes/header.php';
 
 
 $stmt = $conexao->prepare("SELECT nome FROM agricultores WHERE id = ?");

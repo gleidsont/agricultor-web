@@ -1,13 +1,14 @@
 <?php
 session_start();
 include 'includes/conexao.php';
-include 'includes/header.php';
+
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
     exit;
 }
+include 'includes/header.php';
 
 // Busca estatísticas para o dashboard
 $stmt = $conexao->prepare("SELECT COUNT(*) as total FROM agricultores");
